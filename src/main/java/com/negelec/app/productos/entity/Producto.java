@@ -4,39 +4,40 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="productos")
+@Table(name="producto")
 public class Producto {
 	
 	@Id
-	@Column(name="id")
-	public long id;
-	public String codigo;
-	public String nombre;
-	public String descripcion;
-	public String urlfoto;
-	public long getId() {
-		return id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer codigoproducto;
+	private String nombreproducto;
+	private String descripcionproducto;
+	private float precioproducto; 
+	private String urlfoto;
+	
+	public Integer getCodigoproducto() {
+		return codigoproducto;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setCodigoproducto(Integer codigoproducto) {
+		this.codigoproducto = codigoproducto;
 	}
-	public String getCodigo() {
-		return codigo;
+	public String getNombreproducto() {
+		return nombreproducto;
 	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setNombreproducto(String nombreproducto) {
+		this.nombreproducto = nombreproducto;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getDescripcionproducto() {
+		return descripcionproducto;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setDescripcionproducto(String descripcionproducto) {
+		this.descripcionproducto = descripcionproducto;
 	}
-	public String getDescripcion() {
-		return descripcion;
+	public float getPrecioproducto() {
+		return precioproducto;
 	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setPrecioproducto(float precioproducto) {
+		this.precioproducto = precioproducto;
 	}
 	public String getUrlfoto() {
 		return urlfoto;
