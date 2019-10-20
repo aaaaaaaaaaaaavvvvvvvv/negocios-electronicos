@@ -1,6 +1,8 @@
 package com.negelec.app.productos.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,10 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-@Entity
+@Entity(name = "cabeceraCompra")
 @Table(name = "cab_compra")
 public class CabeceraCompra {
 	@Id
@@ -22,6 +25,9 @@ public class CabeceraCompra {
 	private Usuario usuario;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaCompra;
+	@OneToMany(mappedBy = "compra")
+	private List<DetalleCompra> detalle;
+	
 	public Integer getCodigocompra() {
 		return codigocompra;
 	}
@@ -40,4 +46,11 @@ public class CabeceraCompra {
 	public void setFechaCompra(Date fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
+	public List<DetalleCompra> getDetalle() {
+		return new ArrayList<DetalleCompra>(detalle);
+	}
+	public void setDetalle(List<DetalleCompra> detalle) {
+		this.detalle = detalle;
+	}
+	
 }

@@ -9,50 +9,42 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "detalle_compra")
-public class DetalleCompra {
+@Table(name = "carrito_detalle")
+public class DetalleCarrito {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer codigodetallecompra;
+	private Integer codigocarritodetalle;
 	@ManyToOne
-	@JoinColumn(name = "codigocompra", referencedColumnName = "codigocompra")
-	private CabeceraCompra compra;
+	@JoinColumn(name = "codigocarrito", referencedColumnName = "codigocarrito")
+	private Carrito carrito;
 	@ManyToOne
 	@JoinColumn(name = "codigoproducto", referencedColumnName = "codigoproducto")
 	private Producto producto;
 	private Integer cantidad;
-
-	public Integer getCodigodetallecompra() {
-		return codigodetallecompra;
+	public Integer getCodigocarritodetalle() {
+		return codigocarritodetalle;
 	}
-
-	public void setCodigodetallecompra(Integer codigodetallecompra) {
-		this.codigodetallecompra = codigodetallecompra;
+	public void setCodigocarritodetalle(Integer codigocarritodetalle) {
+		this.codigocarritodetalle = codigocarritodetalle;
 	}
-
-	public CabeceraCompra getCompra() {
-		return compra;
+	public Carrito getCarrito() {
+		return carrito;
 	}
-
-	public void setCompra(CabeceraCompra compra) {
-		this.compra = compra;
+	public void setCarrito(Carrito carrito) {
+		this.carrito = carrito;
 	}
-
 	public Producto getProducto() {
 		return producto;
 	}
-
 	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
-
 	public Integer getCantidad() {
 		return cantidad;
 	}
-
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
 	
-
+	
 }

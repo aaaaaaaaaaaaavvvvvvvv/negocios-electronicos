@@ -1,11 +1,15 @@
 package com.negelec.app.productos.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +21,8 @@ public class Carrito {
 	@ManyToOne
 	@JoinColumn(name = "codigousuario", referencedColumnName = "codigousuario")
 	private Usuario usuario;
-	@ManyToOne
-	@JoinColumn(name = "codigoproducto", referencedColumnName = "codigoproducto")
-	private Producto producto;
-	private Integer cantidad;
+	@OneToMany(mappedBy = "carrito")
+	private List<DetalleCarrito> detalle;
 	public Integer getCodigocarrito() {
 		return codigocarrito;
 	}
@@ -33,18 +35,10 @@ public class Carrito {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	public Producto getProducto() {
-		return producto;
+	public List<DetalleCarrito> getDetalle() {
+		return new ArrayList<DetalleCarrito>(detalle);
 	}
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setDetalle(List<DetalleCarrito> detalle) {
+		this.detalle = detalle;
 	}
-	public Integer getCantidad() {
-		return cantidad;
-	}
-	public void setCantidad(Integer cantidad) {
-		this.cantidad = cantidad;
-	}
-	
-	
 }
