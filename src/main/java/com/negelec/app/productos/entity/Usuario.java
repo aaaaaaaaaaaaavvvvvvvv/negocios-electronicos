@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -23,8 +26,9 @@ public class Usuario {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechacreacionusuario;
 
-	@OneToMany(mappedBy = "usuario")
-	private List<UsuarioRol> roles;
+	@JoinTable(name = "usuario_rol",joinColumns = @JoinColumn(name="codigousuario"), inverseJoinColumns = @JoinColumn(name="codigorol"))
+	@ManyToMany
+	private List<Rol> roles;
 
 	public Integer getCodigousuario() {
 		return codigousuario;
@@ -58,11 +62,13 @@ public class Usuario {
 		this.fechacreacionusuario = fechacreacionusuario;
 	}
 
-	public List<UsuarioRol> getRoles() {
+	public List<Rol> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<UsuarioRol> roles) {
+	public void setRoles(List<Rol> roles) {
 		this.roles = roles;
 	}
+
+	
 }
