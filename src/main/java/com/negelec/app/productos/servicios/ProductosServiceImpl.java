@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.negelec.app.productos.entity.Producto;
 import com.negelec.app.productos.repository.IProductosDAO;
+import com.negelec.app.productos.servicios.Impl.IProductosService;
 
 @Service
 public class ProductosServiceImpl implements IProductosService{

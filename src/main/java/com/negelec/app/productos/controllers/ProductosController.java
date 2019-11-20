@@ -2,7 +2,6 @@ package com.negelec.app.productos.controllers;
 
 import java.util.List;
 
-import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.negelec.app.productos.entity.Producto;
 import com.negelec.app.productos.model.DeleteModel;
-import com.negelec.app.productos.servicios.IProductosService;
+import com.negelec.app.productos.servicios.Impl.IProductosService;
 
 @RestController
 @RequestMapping("/productos")
