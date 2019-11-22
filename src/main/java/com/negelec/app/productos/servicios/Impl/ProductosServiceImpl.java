@@ -1,4 +1,4 @@
-package com.negelec.app.productos.servicios;
+package com.negelec.app.productos.servicios.Impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.negelec.app.productos.entity.Producto;
 import com.negelec.app.productos.repository.IProductosDAO;
-import com.negelec.app.productos.servicios.Impl.IProductosService;
+import com.negelec.app.productos.servicios.IProductosService;
 
 @Service
 public class ProductosServiceImpl implements IProductosService{

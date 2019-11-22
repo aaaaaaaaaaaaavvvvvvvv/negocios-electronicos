@@ -8,14 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.negelec.app.productos.entity.Usuario;
 import com.negelec.app.productos.model.UsuarioModel;
-import com.negelec.app.productos.servicios.Impl.ILoginService;
+import com.negelec.app.productos.servicios.ILoginService;
 
 @RestController
 @CrossOrigin
 public class LoginController {
 	@Autowired
 	private ILoginService loginService;
-
+	
+	/*
+	 * @Input: usuario, clave, saldo(opcional) 
+	*/
 	@PostMapping("/login")
 	public Usuario login(@RequestBody UsuarioModel usuarioModel) {
 		return loginService.login(usuarioModel);

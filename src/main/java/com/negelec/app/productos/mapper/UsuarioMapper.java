@@ -18,6 +18,7 @@ public class UsuarioMapper {
 		entity.setNombreusuario(model.getUsuario());
 		entity.setClaveusuario(encoder.encode(model.getClave()));
 		entity.setFechacreacionusuario(new Date());
+		entity.setSaldo(model.getSaldo());
 		return entity;
 	}
 }

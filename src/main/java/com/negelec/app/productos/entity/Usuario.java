@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -22,10 +24,12 @@ public class Usuario {
 	private Integer codigousuario;
 	private String nombreusuario;
 	private String claveusuario;
+	private float saldo;
+	@JsonIgnore
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechacreacionusuario;
-
-	@JoinTable(name = "usuario_rol",joinColumns = @JoinColumn(name="codigousuario"), inverseJoinColumns = @JoinColumn(name="codigorol"))
+	@JsonIgnore
+	@JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "codigousuario"), inverseJoinColumns = @JoinColumn(name = "codigorol"))
 	@ManyToMany
 	private List<Rol> roles;
 
@@ -53,6 +57,14 @@ public class Usuario {
 		this.claveusuario = claveusuario;
 	}
 
+	public float getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+
 	public Date getFechacreacionusuario() {
 		return fechacreacionusuario;
 	}
@@ -69,5 +81,4 @@ public class Usuario {
 		this.roles = roles;
 	}
 
-	
 }

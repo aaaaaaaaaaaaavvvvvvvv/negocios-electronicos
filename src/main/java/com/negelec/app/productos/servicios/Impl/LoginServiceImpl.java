@@ -1,4 +1,4 @@
-package com.negelec.app.productos.servicios;
+package com.negelec.app.productos.servicios.Impl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import com.negelec.app.productos.entity.Usuario;
 import com.negelec.app.productos.mapper.UsuarioMapper;
 import com.negelec.app.productos.model.UsuarioModel;
 import com.negelec.app.productos.repository.ILoginDAO;
-import com.negelec.app.productos.servicios.Impl.ILoginService;
+import com.negelec.app.productos.servicios.ILoginService;
 @Service
 public class LoginServiceImpl implements ILoginService {
 	@Autowired

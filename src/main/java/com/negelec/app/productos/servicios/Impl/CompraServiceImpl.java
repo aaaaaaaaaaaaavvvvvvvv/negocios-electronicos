@@ -1,4 +1,4 @@
-package com.negelec.app.productos.servicios;
+package com.negelec.app.productos.servicios.Impl;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import com.negelec.app.productos.model.CabeceraCompraModel;
 import com.negelec.app.productos.model.DetalleCompraModel;
 import com.negelec.app.productos.repository.ICabeceraCompraDAO;
 import com.negelec.app.productos.repository.IDetalleCompraDAO;
-import com.negelec.app.productos.servicios.Impl.ICompraService;
+import com.negelec.app.productos.servicios.ICompraService;
 
 @Service
 public class CompraServiceImpl implements ICompraService {

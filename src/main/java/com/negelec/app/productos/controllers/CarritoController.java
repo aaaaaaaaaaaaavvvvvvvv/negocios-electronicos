@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.negelec.app.productos.entity.CabeceraCompra;
 import com.negelec.app.productos.model.CabeceraCompraModel;
-import com.negelec.app.productos.servicios.Impl.ICompraService;
+import com.negelec.app.productos.servicios.ICompraService;
 
 @RestController
 @RequestMapping("/carrito")

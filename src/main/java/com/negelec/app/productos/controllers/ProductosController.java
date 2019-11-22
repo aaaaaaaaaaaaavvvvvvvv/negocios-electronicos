@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.negelec.app.productos.entity.Producto;
 import com.negelec.app.productos.model.DeleteModel;
-import com.negelec.app.productos.servicios.Impl.IProductosService;
+import com.negelec.app.productos.servicios.IProductosService;
 
 @RestController
 @RequestMapping("/productos")

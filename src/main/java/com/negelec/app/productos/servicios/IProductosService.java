@@ -1,4 +1,4 @@
-package com.negelec.app.productos.servicios.Impl;
+package com.negelec.app.productos.servicios;
 
 import java.util.List;
 

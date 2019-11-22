@@ -1,8 +1,17 @@
 package com.negelec.app.productos.model;
 
 public class UsuarioModel {
+	private int codigoUsuario;
 	private String usuario;
 	private String clave;
+	private float saldo;
+	
+	public int getCodigoUsuario() {
+		return codigoUsuario;
+	}
+	public void setCodigoUsuario(int codigoUsuario) {
+		this.codigoUsuario = codigoUsuario;
+	}
 	public String getUsuario() {
 		return usuario;
 	}
@@ -15,5 +24,12 @@ public class UsuarioModel {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
+	public float getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	
 
 }
