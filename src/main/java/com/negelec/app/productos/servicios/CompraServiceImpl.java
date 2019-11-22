@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.negelec.app.productos.entity.CabeceraCompra;
+import com.negelec.app.productos.entity.DetalleCompra;
+import com.negelec.app.productos.firebase.service.IEmailService;
 import com.negelec.app.productos.mapper.CabeceraCompraMapper;
 import com.negelec.app.productos.mapper.DetalleCompraMapper;
 import com.negelec.app.productos.model.CabeceraCompraModel;
+import com.negelec.app.productos.model.DetalleCompraModel;
 import com.negelec.app.productos.repository.ICabeceraCompraDAO;
 import com.negelec.app.productos.repository.IDetalleCompraDAO;
 import com.negelec.app.productos.servicios.Impl.ICompraService;
@@ -20,16 +23,22 @@ public class CompraServiceImpl implements ICompraService {
 	private ICabeceraCompraDAO cabeceraCompraRepo;
 	@Autowired
 	private IDetalleCompraDAO detalleCompraRepo;
-
+	@Autowired
+	private IEmailService emailService;
+	
+	
 	@Override
 	public boolean agregarCompra(CabeceraCompraModel compra) {
 		CabeceraCompra cabeceraCompra = cabeceraCompraRepo.save(CabeceraCompraMapper.fromModelToEntity(compra));
 		if (cabeceraCompra != null) {
 			try {
-				compra.getDetalleCarrito().forEach((detalleCompraModel) -> {
-					detalleCompraRepo.save(DetalleCompraMapper.fromModelToEntity(detalleCompraModel,
+				float montoTotal = 0;
+				for (DetalleCompraModel detalleCompraModel : compra.getDetalleCarrito()) {
+					DetalleCompra aux = detalleCompraRepo.save(DetalleCompraMapper.fromModelToEntity(detalleCompraModel,
 							cabeceraCompra.getCodigocompra()));
-				});
+					montoTotal += aux.getCantidad() * aux.getProducto().getPrecioproducto();
+				}
+				//emailService.enviarEmail("Usted acaba de comprar en GutiNatura por el monto de "+montoTotal);
 			} catch (Exception e) {
 				System.out.println(e);
 				return false;
