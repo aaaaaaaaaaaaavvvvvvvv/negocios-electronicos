@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.negelec.app.productos.entity.Usuario;
 import com.negelec.app.productos.model.UsuarioModel;
 import com.negelec.app.productos.servicios.Impl.ILoginService;
 
@@ -16,12 +17,12 @@ public class LoginController {
 	private ILoginService loginService;
 
 	@PostMapping("/login")
-	public boolean login(@RequestBody UsuarioModel usuarioModel) {
+	public Usuario login(@RequestBody UsuarioModel usuarioModel) {
 		return loginService.login(usuarioModel);
 	}
 
 	@PostMapping("/registro")
-	public boolean registro(@RequestBody UsuarioModel usuarioModel) {
+	public Usuario registro(@RequestBody UsuarioModel usuarioModel) {
 		return loginService.registro(usuarioModel);
 	}
 }

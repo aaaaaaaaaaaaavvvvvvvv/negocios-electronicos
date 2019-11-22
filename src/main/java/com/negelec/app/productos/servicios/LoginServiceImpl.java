@@ -20,18 +20,18 @@ public class LoginServiceImpl implements ILoginService {
 	@Autowired
 	private UsuarioMapper mapper;
 	@Override
-	public boolean login(UsuarioModel usuarioModel) {
+	public Usuario login(UsuarioModel usuarioModel) {
 		List<Usuario> usuarios = loginRepo.findByNombreusuario(usuarioModel.getUsuario());
 		for(Usuario usuario : usuarios) {
 			if(encoder.matches(usuarioModel.getClave(), usuario.getClaveusuario()))
-				return true;
+				return usuario;
 		}
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean registro(UsuarioModel usuarioModel) {
-		return loginRepo.save(mapper.modelToEntity(usuarioModel)) != null ? true : false;
+	public Usuario registro(UsuarioModel usuarioModel) {
+		return loginRepo.save(mapper.modelToEntity(usuarioModel));
 	}
 
 }
