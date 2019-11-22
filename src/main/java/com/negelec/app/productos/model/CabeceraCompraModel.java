@@ -5,10 +5,10 @@ import java.util.List;
 public class CabeceraCompraModel {
 	private int codigousuario;
 	private List<DetalleCompraModel> detalleCarrito;
-	public int getCodigoUsuario() {
+	public int getCodigousuario() {
 		return codigousuario;
 	}
-	public void setCodigoUsuario(int codigousuario) {
+	public void setCodigousuario(int codigousuario) {
 		this.codigousuario = codigousuario;
 	}
 	public List<DetalleCompraModel> getDetalleCarrito() {

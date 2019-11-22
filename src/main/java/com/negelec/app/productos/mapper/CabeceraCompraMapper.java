@@ -10,10 +10,10 @@ public class CabeceraCompraMapper {
 	public static CabeceraCompra fromModelToEntity(CabeceraCompraModel model) {
 		CabeceraCompra entity = new CabeceraCompra();
 		Usuario usuario = new Usuario();
-		usuario.setCodigousuario(model.getCodigoUsuario());
+		usuario.setCodigousuario(model.getCodigousuario());
 		
 		entity.setUsuario(usuario);
-		entity.setFechaCompra(new Date());
+		entity.setFechacompra(new Date());
 		
 		return entity;
 	}

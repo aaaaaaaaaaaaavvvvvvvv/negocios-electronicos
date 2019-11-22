@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,7 @@ public class CabeceraCompra {
 	@JoinColumn(name = "codigousuario", referencedColumnName = "codigousuario")
 	private Usuario usuario;
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaCompra;
+	private Date fechacompra;
 	@OneToMany(mappedBy = "compra")
 	private List<DetalleCompra> detalle;
 	
@@ -40,11 +41,11 @@ public class CabeceraCompra {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	public Date getFechaCompra() {
-		return fechaCompra;
+	public Date getFechacompra() {
+		return fechacompra;
 	}
-	public void setFechaCompra(Date fechaCompra) {
-		this.fechaCompra = fechaCompra;
+	public void setFechacompra(Date fechacompra) {
+		this.fechacompra = fechacompra;
 	}
 	public List<DetalleCompra> getDetalle() {
 		return new ArrayList<DetalleCompra>(detalle);

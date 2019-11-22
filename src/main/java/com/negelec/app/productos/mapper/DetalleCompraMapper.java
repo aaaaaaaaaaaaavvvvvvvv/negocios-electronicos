@@ -13,7 +13,7 @@ public class DetalleCompraMapper {
 		cabeceraCompra.setCodigocompra(codigoCabecera);
 		
 		Producto producto = new Producto();
-		producto.setCodigoproducto(model.getCodigoProducto());
+		producto.setCodigoproducto(model.getCodigoproducto());
 		
 		entity.setCompra(cabeceraCompra);
 		entity.setProducto(producto);

@@ -1,5 +1,7 @@
 package com.negelec.app.productos.servicios;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,11 @@ public class CompraServiceImpl implements ICompraService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public List<CabeceraCompra> recuperarCompras(int codigousuario) {
+		return cabeceraCompraRepo.findPorCodigousuario(codigousuario);
 	}
 
 }

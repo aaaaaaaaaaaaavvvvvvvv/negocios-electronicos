@@ -8,12 +8,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "detalle_compra")
+@Table(name = "compra_detalle")
 public class DetalleCompra {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigodetallecompra;
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "codigocompra", referencedColumnName = "codigocompra")
 	private CabeceraCompra compra;
