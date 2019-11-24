@@ -21,6 +21,8 @@ public class LoginController {
 	*/
 	@PostMapping("/login")
 	public Usuario login(@RequestBody UsuarioModel usuarioModel) {
+		System.out.println("MOSTRANDO");
+		System.out.println(usuarioModel.getClave());
 		return loginService.login(usuarioModel);
 	}
 
