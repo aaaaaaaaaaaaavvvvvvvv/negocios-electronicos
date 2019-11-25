@@ -34,6 +34,7 @@ public class PushController {
 		cnt.setBody("Se concreto una compra desde nuestra web");
 		cnt.setTitle("Nueva Compra");
 		dtn.setCodigoUsuario(push.getUsuario());
+		dtn.setClick_action("FLUTTER_NOTIFICATION_CLICK");
 		pmm.setNotification(cnt);
 		pmm.setData(dtn);
 		HttpHeaders headers = new HttpHeaders();
