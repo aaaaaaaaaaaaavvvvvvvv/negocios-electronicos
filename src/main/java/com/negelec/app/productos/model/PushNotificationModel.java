@@ -1,14 +1,14 @@
 package com.negelec.app.productos.model;
 
 public class PushNotificationModel {
-	private String usuario;
+	private int usuario;
 	private String codCelular;
 
-	public String getUsuario() {
+	public int getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(String usuario) {
+	public void setUsuario(int usuario) {
 		this.usuario = usuario;
 	}
 

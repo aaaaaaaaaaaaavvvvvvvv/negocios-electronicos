@@ -1,13 +1,13 @@
 package com.negelec.app.productos.model;
 
 public class DatosNotificaciones {
-	private String codigoUsuario;
+	private int codigoUsuario;
 
-	public String getCodigoUsuario() {
+	public int getCodigoUsuario() {
 		return codigoUsuario;
 	}
 
-	public void setCodigoUsuario(String codigoUsuario) {
+	public void setCodigoUsuario(int codigoUsuario) {
 		this.codigoUsuario = codigoUsuario;
 	}
 }
