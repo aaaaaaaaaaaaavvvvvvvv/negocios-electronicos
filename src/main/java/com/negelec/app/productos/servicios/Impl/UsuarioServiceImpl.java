@@ -26,4 +26,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		}
 	}
 
+	@Override
+	public Usuario actualizarCodigoCelular(UsuarioModel usuarioModel) {
+		Optional<Usuario> usuarioOpt = usuarioRepo.findById(usuarioModel.getCodigoUsuario());
+		if (usuarioOpt.isPresent()) {
+			Usuario usuario = usuarioOpt.get();
+			usuario.setCodigocelular(usuarioModel.getCodigoCelular());
+			return usuarioRepo.save(usuario);
+		} else {
+			return null;
+		}
+	}
+
 }

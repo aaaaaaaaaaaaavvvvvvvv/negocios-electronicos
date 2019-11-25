@@ -32,6 +32,7 @@ public class Usuario {
 	@JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "codigousuario"), inverseJoinColumns = @JoinColumn(name = "codigorol"))
 	@ManyToMany
 	private List<Rol> roles;
+	private String codigocelular;
 
 	public Integer getCodigousuario() {
 		return codigousuario;
@@ -79,6 +80,14 @@ public class Usuario {
 
 	public void setRoles(List<Rol> roles) {
 		this.roles = roles;
+	}
+
+	public String getCodigocelular() {
+		return codigocelular;
+	}
+
+	public void setCodigocelular(String codigocelular) {
+		this.codigocelular = codigocelular;
 	}
 
 }

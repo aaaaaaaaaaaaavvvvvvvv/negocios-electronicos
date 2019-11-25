@@ -23,4 +23,11 @@ public class UsuarioController {
 	public Usuario actualizarSaldo(@RequestBody UsuarioModel usuarioModel) {
 		return usuarioService.actualizarSaldo(usuarioModel);
 	}
+	/*
+	 * @Input: codigoUsuario, codigoCelular
+	*/
+	@PutMapping("/actualizarCodigoCelular")
+	public Usuario actualizarCodigoCelular(@RequestBody UsuarioModel usuarioModel) {
+		return usuarioService.actualizarCodigoCelular(usuarioModel);
+	}
 }
